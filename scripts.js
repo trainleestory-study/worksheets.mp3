@@ -1,5 +1,4 @@
-// Index of all 200 reading worksheets
-const Database = {
+const database = {
   "001": {
     passage: "I see a big pig. The pig likes to dig. The pig wears a wig.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
