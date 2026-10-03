@@ -68,7 +68,6 @@
     .btn-stop { background-color: #d63031; margin-top: 15px; }
     .status { margin-top: 15px; font-weight: bold; color: #555; font-size: 14px; }
   </style>
-  <script src="scripts.js"></script>
 </head>
 <body>
 
@@ -84,8 +83,8 @@
 
   <div class="section-title">📖 Read Passage (3 Times):</div>
   <button class="btn btn-read1" onclick="playSinglePassage(1)">⭐ Read 1st Time + Color Star 1</button>
-  <button class="btn btn-read2" onclick="playSinglePassage(2)">⭐⭐ Read 2nd Time + Color Star 2</button>
-  <button class="btn btn-read3" onclick="playSinglePassage(3)">⭐⭐⭐ Read 3rd Time + Color Star 3</button>
+  <button class="btn btn-read2" onclick="playSinglePassage(2)">⭐ Read 2nd Time + Color Star 2</button>
+  <button class="btn btn-read3" onclick="playSinglePassage(3)">⭐ Read 3rd Time + Color Star 3</button>
 
   <div class="section-title">❓ Comprehension Questions:</div>
   <button class="btn btn-q1" onclick="speakText(currentLesson.q1)">1️⃣ Question 1</button>
@@ -101,36 +100,32 @@
   let currentLesson = {};
   const synth = window.speechSynthesis;
   let selectedVoice = null;
-  let retryCount = 0;
 
-  function populateSelect() {
+  function initApp() {
+    const db = window.database || (typeof database !== 'undefined' ? database : null);
     const select = document.getElementById('lessonSelect');
-    
-    if (typeof database === 'undefined' || Object.keys(database).length === 0) {
-      if (retryCount < 10) {
-        retryCount++;
-        setTimeout(populateSelect, 300);
-        return;
-      }
+
+    if (!db || Object.keys(db).length === 0) {
       updateStatus("⚠️ Could not load scripts.js content");
       return;
     }
 
     select.innerHTML = '';
-    for (let key in database) {
+    for (let key in db) {
       let opt = document.createElement('option');
       opt.value = key;
-      opt.innerHTML = `Page ${key} - ${database[key].passage.substring(0, 20)}...`;
+      opt.innerHTML = `Page ${key} - ${db[key].passage.substring(0, 20)}...`;
       select.appendChild(opt);
     }
     loadSelectedLesson();
   }
 
   function loadSelectedLesson() {
+    const db = window.database || (typeof database !== 'undefined' ? database : null);
     const select = document.getElementById('lessonSelect');
-    if (!select.value) return;
+    if (!select.value || !db) return;
     const key = select.value;
-    currentLesson = database[key];
+    currentLesson = db[key];
     updateStatus(`Loaded Page ${key}`);
   }
 
@@ -174,20 +169,28 @@
 
   function playSinglePassage(starNumber) {
     if (!currentLesson.passage) return;
-    const text = `${currentLesson.passage} ... Great job! Let's color in star number ${starNumber}!`;
+    // Reads ONLY the passage text
     updateStatus(`📖 Reading passage (${starNumber}/3)...`);
-    speakText(text);
+    speakText(currentLesson.passage);
   }
 
   function stopAudio() {
     synth.cancel();
     updateStatus("Audio stopped.");
   }
+</script>
 
-  window.onload = () => {
+<script>
+  const scriptTag = document.createElement('script');
+  scriptTag.src = 'scripts.js?v=' + new Date().getTime();
+  scriptTag.onload = () => {
     loadVoice();
-    populateSelect();
+    initApp();
   };
+  scriptTag.onerror = () => {
+    updateStatus("⚠️️ Failed to download scripts.js file from server.");
+  };
+  document.head.appendChild(scriptTag);
 </script>
 
 </body>
