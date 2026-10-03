@@ -21,10 +21,7 @@
     }
     h1 { color: #ff6b6b; font-size: 22px; margin-bottom: 15px; }
     
-    .select-group {
-      text-align: left;
-      margin-bottom: 15px;
-    }
+    .select-group { text-align: left; margin-bottom: 15px; }
     label { font-weight: bold; font-size: 14px; color: #333; display: block; margin-bottom: 5px; }
     select {
       width: 100%;
@@ -81,14 +78,14 @@
   <div class="select-group">
     <label for="lessonSelect">📌 Select Page Number:</label>
     <select id="lessonSelect" onchange="loadSelectedLesson()">
-      <!-- Populated dynamically -->
+      <option value="">Loading pages...</option>
     </select>
   </div>
 
   <div class="section-title">📖 Read Passage (3 Times):</div>
   <button class="btn btn-read1" onclick="playSinglePassage(1)">⭐ Read 1st Time + Color Star 1</button>
-  <button class="btn btn-read2" onclick="playSinglePassage(2)">⭐ Read 2nd Time + Color Star 2</button>
-  <button class="btn btn-read3" onclick="playSinglePassage(3)">⭐ Read 3rd Time + Color Star 3</button>
+  <button class="btn btn-read2" onclick="playSinglePassage(2)">⭐⭐ Read 2nd Time + Color Star 2</button>
+  <button class="btn btn-read3" onclick="playSinglePassage(3)">⭐⭐⭐ Read 3rd Time + Color Star 3</button>
 
   <div class="section-title">❓ Comprehension Questions:</div>
   <button class="btn btn-q1" onclick="speakText(currentLesson.q1)">1️⃣ Question 1</button>
@@ -97,23 +94,29 @@
 
   <button class="btn btn-stop" onclick="stopAudio()">⏹️ Stop Audio</button>
 
-  <div class="status" id="statusText">Ready</div>
+  <div class="status" id="statusText">Loading database...</div>
 </div>
 
 <script>
   let currentLesson = {};
   const synth = window.speechSynthesis;
   let selectedVoice = null;
+  let retryCount = 0;
 
   function populateSelect() {
     const select = document.getElementById('lessonSelect');
-    select.innerHTML = '';
     
     if (typeof database === 'undefined' || Object.keys(database).length === 0) {
+      if (retryCount < 10) {
+        retryCount++;
+        setTimeout(populateSelect, 300);
+        return;
+      }
       updateStatus("⚠️ Could not load scripts.js content");
       return;
     }
 
+    select.innerHTML = '';
     for (let key in database) {
       let opt = document.createElement('option');
       opt.value = key;
@@ -124,7 +127,9 @@
   }
 
   function loadSelectedLesson() {
-    const key = document.getElementById('lessonSelect').value;
+    const select = document.getElementById('lessonSelect');
+    if (!select.value) return;
+    const key = select.value;
     currentLesson = database[key];
     updateStatus(`Loaded Page ${key}`);
   }
@@ -155,8 +160,8 @@
     const utterance = new SpeechSynthesisUtterance(text);
     if (selectedVoice) utterance.voice = selectedVoice;
     
-    utterance.rate = 0.7;   // Slow pace for 5-year-olds
-    utterance.pitch = 1.25; // Cheerful, higher tone
+    utterance.rate = 0.7;   
+    utterance.pitch = 1.25; 
 
     utterance.onstart = () => updateStatus("🔊 Reading...");
     utterance.onend = () => {
@@ -181,7 +186,7 @@
 
   window.onload = () => {
     loadVoice();
-    setTimeout(populateSelect, 300);
+    populateSelect();
   };
 </script>
 
