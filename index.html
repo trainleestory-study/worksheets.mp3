@@ -160,7 +160,7 @@
     const utterance = new SpeechSynthesisUtterance(text);
     if (selectedVoice) utterance.voice = selectedVoice;
     
-    // Set speech speed to 0.7x (30% slower for clear phonics listening)
+    // Set speech speed to 0.65x (35% slower for clear phonics listening)
     utterance.rate = 0.7;   
     utterance.pitch = 1.25; 
 
