@@ -1,4 +1,5 @@
-"001": {
+window.database = {
+  "001": {
     passage: "Dan is a cat. Dan is fat. Dan has a red hat.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
     q2: "Question 2: What is Dan? Option A: a dog. Option B: a cat. Option C: a pig.",
@@ -298,3 +299,4 @@
     q2: "Question 2: Who is fishing in the lake? Option A: Sandy. Option B: Sam. Option C: Pam.",
     q3: "Question 3: Where did he put the fish? Option A: in the box. Option B: in the water. Option C: in the bucket."
   }
+};
