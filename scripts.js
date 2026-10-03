@@ -5,10 +5,10 @@ const database = {
     q2: "Question 2: What do I see? Option A: a cat. Option B: a dog. Option C: a pig.",
     q3: "Question 3: What does the pig like to do? Option A: jig. Option B: dig. Option C: eat."
   },
-  "002": {
-    passage: "I see a fat cat. The cat sat on a mat.",
+ "002": {
+    passage: "I see a yellow cat. The cat sat on the mat. The cat sat on my lap.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: Where did the cat sit? Option A: on a mat. Option B: in a box. Option C: under a chair.",
-    q3: "Question 3: How was the cat? Option A: fat. Option B: thin. Option C: tall."
+    q2: "Question 2: What do I see? Option A: a dog. Option B: a bat. Option C: a cat.",
+    q3: "Question 3: What color is the cat? Option A: yellow. Option B: orange. Option C: brown."
   }
 };
