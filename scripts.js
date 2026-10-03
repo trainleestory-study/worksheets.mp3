@@ -1,15 +1,15 @@
 window.database = {
   "001": {
-    passage: "Dan is a cat. Dan is fat. Dan has a red hat.",
+    passage: "I see a big pig. The pig likes to dig. The pig wears a wig.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What is Dan? Option A: a dog. Option B: a cat. Option C: a pig.",
-    q3: "Question 3: What color is his hat? Option A: red. Option B: blue. Option C: yellow."
+    q2: "Question 2: What do I see? Option A: a cat. Option B: a dog. Option C: a pig.",
+    q3: "Question 3: What does the pig like to do? Option A: jig. Option B: dig. Option C: eat."
   },
   "002": {
-    passage: "Max is a big dog. Max can run fast. Max likes to play ball.",
+    passage: "I see a yellow cat. The cat sat on the mat. The cat sat on my lap.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: Who is Max? Option A: a cat. Option B: a big dog. Option C: a bird.",
-    q3: "Question 3: What does Max like to play? Option A: ball. Option B: car. Option C: stick."
+    q2: "Question 2: What do I see? Option A: a dog. Option B: a bat. Option C: a cat.",
+    q3: "Question 3: What color is the cat? Option A: yellow. Option B: orange. Option C: brown."
   },
   "003": {
     passage: "Look at the hen. The hen is on the log. The hen has ten eggs.",
