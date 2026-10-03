@@ -87,9 +87,9 @@
   <button class="btn btn-readall" onclick="playFullPassage()">📖 Read Full Passage</button>
   
   <!-- Individual Sentence Buttons -->
-  <button class="btn btn-read1" onclick="playSentence(1)">1️⃣ Sentence 1</button>
-  <button class="btn btn-read2" onclick="playSentence(2)">2️⃣ Sentence 2</button>
-  <button class="btn btn-read3" onclick="playSentence(3)">3️⃣ Sentence 3</button>
+  <button class="btn btn-read1" onclick="playSentence(1)">🚂 Sentence 1</button>
+  <button class="btn btn-read2" onclick="playSentence(2)">🚃 Sentence 2</button>
+  <button class="btn btn-read3" onclick="playSentence(3)">🚅 Sentence 3</button>
 
   <div class="section-title">❓ Comprehension Questions:</div>
   <button class="btn btn-q1" onclick="speakText(currentLesson.q1)">1️⃣ Question 1</button>
@@ -160,6 +160,7 @@
     const utterance = new SpeechSynthesisUtterance(text);
     if (selectedVoice) utterance.voice = selectedVoice;
     
+    // Set speech speed to 0.7x (30% slower for clear phonics listening)
     utterance.rate = 0.7;   
     utterance.pitch = 1.25; 
 
