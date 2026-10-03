@@ -7,8 +7,8 @@ const database = {
   },
   "002": {
     passage: "I see a fat cat. The cat sat on a mat.",
-    q1: "Question 1: Put the events in order.",
-    q2: "Question 2: Where did the cat sit? Option A: mat. Option B: box.",
-    q3: "Question 3: How was the cat? Option A: fat. Option B: thin."
+    q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
+    q2: "Question 2: Where did the cat sit? Option A: on a mat. Option B: in a box. Option C: under a chair.",
+    q3: "Question 3: How was the cat? Option A: fat. Option B: thin. Option C: tall."
   }
 };
