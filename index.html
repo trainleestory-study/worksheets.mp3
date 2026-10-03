@@ -73,7 +73,7 @@
 <body>
 
 <div class="card">
-  <h1>🌟 👦🏻 Train Lee Reading Practice 🌟</h1>
+  <h1>🌟 Phonics Reading Practice 🌟</h1>
   
   <div class="select-group">
     <label for="lessonSelect">📌 Select Page Number:</label>
@@ -83,10 +83,8 @@
   </div>
 
   <div class="section-title">📖 Read Passage Options:</div>
-  <!-- New Button for Whole Passage -->
   <button class="btn btn-readall" onclick="playFullPassage()">📖 Read Full Passage</button>
   
-  <!-- Individual Sentence Buttons -->
   <button class="btn btn-read1" onclick="playSentence(1)">🚂 Sentence 1</button>
   <button class="btn btn-read2" onclick="playSentence(2)">🚃 Sentence 2</button>
   <button class="btn btn-read3" onclick="playSentence(3)">🚅 Sentence 3</button>
@@ -101,13 +99,16 @@
   <div class="status" id="statusText">Loading database...</div>
 </div>
 
+<!-- Load external scripts file -->
+<script src="scripts.js"></script>
+
 <script>
   let currentLesson = {};
   const synth = window.speechSynthesis;
   let selectedVoice = null;
 
   function initApp() {
-    const db = window.database || (typeof database !== 'undefined' ? database : null);
+    const db = window.database;
     const select = document.getElementById('lessonSelect');
 
     if (!db || Object.keys(db).length === 0) {
@@ -126,9 +127,9 @@
   }
 
   function loadSelectedLesson() {
-    const db = window.database || (typeof database !== 'undefined' ? database : null);
+    const db = window.database;
     const select = document.getElementById('lessonSelect');
-    if (!select.value || !db) return;
+    if (!select || !select.value || !db) return;
     const key = select.value;
     currentLesson = db[key];
     updateStatus(`Loaded Page ${key}`);
@@ -136,10 +137,11 @@
 
   function loadVoice() {
     const voices = synth.getVoices();
-    selectedVoice = voices.find(v => v.lang.includes('en-GB') && (v.name.includes('Google') || v.name.includes('Female') || v.name.includes('Victoria') || v.name.includes('Fiona'))) ||
-                    voices.find(v => v.lang.includes('en-US') && (v.name.includes('Samantha') || v.name.includes('Zira') || v.name.includes('Female'))) ||
-                    voices.find(v => v.lang.includes('en-GB')) ||
+    // Prioritize natural UK/US voices with clear articulation for kids
+    selectedVoice = voices.find(v => v.lang.includes('en-US') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Samantha') || v.name.includes('Zira'))) ||
+                    voices.find(v => v.lang.includes('en-GB') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Victoria') || v.name.includes('Fiona'))) ||
                     voices.find(v => v.lang.includes('en-US')) ||
+                    voices.find(v => v.lang.includes('en-GB')) ||
                     voices[0];
   }
 
@@ -157,12 +159,18 @@
       updateStatus("⚠️ No text available");
       return;
     }
-    const utterance = new SpeechSynthesisUtterance(text);
+
+    // Enhance clarity for ending consonants (尾音) by giving slight punctuation breaks
+    let formattedText = text.replace(/([.!?])/g, "$1 ");
+
+    const utterance = new SpeechSynthesisUtterance(formattedText);
     if (selectedVoice) utterance.voice = selectedVoice;
     
-    // Set speech speed to 0.65x (35% slower for clear phonics listening)
-    utterance.rate = 0.7;   
-    utterance.pitch = 1.25; 
+    // Set speech rate to 0.65 for early-stage children phonics learning
+    utterance.rate = 0.65;   
+    
+    // Set pitch to 1.1 (Slightly warm & clear tone for crisp ending consonants)
+    utterance.pitch = 1.1; 
 
     utterance.onstart = () => updateStatus("🔊 Reading...");
     utterance.onend = () => {
@@ -182,7 +190,6 @@
   function playSentence(sentenceNum) {
     if (!currentLesson.passage) return;
 
-    // Split passage into sentences ending with . ! or ?
     const sentences = currentLesson.passage.match(/[^.!?]+[.!?]+/g) || [currentLesson.passage];
     const targetIndex = sentenceNum - 1;
 
@@ -199,19 +206,11 @@
     synth.cancel();
     updateStatus("Audio stopped.");
   }
-</script>
 
-<script>
-  const scriptTag = document.createElement('script');
-  scriptTag.src = 'scripts.js?v=' + new Date().getTime();
-  scriptTag.onload = () => {
+  window.addEventListener('DOMContentLoaded', () => {
     loadVoice();
     initApp();
-  };
-  scriptTag.onerror = () => {
-    updateStatus("⚠️ Failed to download scripts.js file from server.");
-  };
-  document.head.appendChild(scriptTag);
+  });
 </script>
 
 </body>
