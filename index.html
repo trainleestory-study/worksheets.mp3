@@ -57,6 +57,7 @@
     }
     .btn:active { transform: scale(0.98); }
 
+    .btn-readall { background-color: #6c5ce7; }
     .btn-read1 { background-color: #4ecdc4; }
     .btn-read2 { background-color: #45b7aa; }
     .btn-read3 { background-color: #3b9c90; }
@@ -81,10 +82,14 @@
     </select>
   </div>
 
-  <div class="section-title">📖 Read Passage (3 Times):</div>
-  <button class="btn btn-read1" onclick="playSinglePassage(1)">⭐ Read 1st Time + Color Star 1</button>
-  <button class="btn btn-read2" onclick="playSinglePassage(2)">⭐ Read 2nd Time + Color Star 2</button>
-  <button class="btn btn-read3" onclick="playSinglePassage(3)">⭐ Read 3rd Time + Color Star 3</button>
+  <div class="section-title">📖 Read Passage Options:</div>
+  <!-- New Button for Whole Passage -->
+  <button class="btn btn-readall" onclick="playFullPassage()">📖 Read Full Passage</button>
+  
+  <!-- Individual Sentence Buttons -->
+  <button class="btn btn-read1" onclick="playSentence(1)">1️⃣ Sentence 1</button>
+  <button class="btn btn-read2" onclick="playSentence(2)">2️⃣ Sentence 2</button>
+  <button class="btn btn-read3" onclick="playSentence(3)">3️⃣ Sentence 3</button>
 
   <div class="section-title">❓ Comprehension Questions:</div>
   <button class="btn btn-q1" onclick="speakText(currentLesson.q1)">1️⃣ Question 1</button>
@@ -167,11 +172,26 @@
     synth.speak(utterance);
   }
 
-  function playSinglePassage(starNumber) {
+  function playFullPassage() {
     if (!currentLesson.passage) return;
-    // Reads ONLY the passage text
-    updateStatus(`📖 Reading passage (${starNumber}/3)...`);
+    updateStatus("📖 Reading full passage...");
     speakText(currentLesson.passage);
+  }
+
+  function playSentence(sentenceNum) {
+    if (!currentLesson.passage) return;
+
+    // Split passage into sentences ending with . ! or ?
+    const sentences = currentLesson.passage.match(/[^.!?]+[.!?]+/g) || [currentLesson.passage];
+    const targetIndex = sentenceNum - 1;
+
+    if (sentences[targetIndex]) {
+      const sentenceText = sentences[targetIndex].trim();
+      updateStatus(`📖 Reading Sentence ${sentenceNum}...`);
+      speakText(sentenceText);
+    } else {
+      updateStatus(`⚠️ Sentence ${sentenceNum} not found`);
+    }
   }
 
   function stopAudio() {
@@ -188,7 +208,7 @@
     initApp();
   };
   scriptTag.onerror = () => {
-    updateStatus("⚠️️ Failed to download scripts.js file from server.");
+    updateStatus("⚠️ Failed to download scripts.js file from server.");
   };
   document.head.appendChild(scriptTag);
 </script>
