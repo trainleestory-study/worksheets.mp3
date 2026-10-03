@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5-Year-Old Phonics Audio Guide</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 { color: #ff6b6b; font-size: 24px; }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-main { background-color: #4ecdc4; }
+    .btn-q1 { background-color: #ffe66d; color: #333; }
+    .btn-q2 { background-color: #ff8b94; }
+    .btn-q3 { background-color: #a8e6cf; color: #333; }
+    .btn-stop { background-color: #ff6b6b; margin-top: 15px; }
+    .status { margin-top: 15px; font-weight: bold; color: #555; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h1>🌟 Reading Practice 🌟</h1>
+  <p>Listen and read along!</p>
+
+  <!-- Control Buttons -->
+  <button class="btn btn-main" onclick="playMainPassage(3)">📖 Read Story (Repeat 3x)</button>
+  <button class="btn btn-q1" onclick="speakText(scriptData.q1)">❓ Question 1 (Question Only)</button>
+  <button class="btn btn-q2" onclick="speakText(scriptData.q2)">❓ Question 2 & Options</button>
+  <button class="btn btn-q3" onclick="speakText(scriptData.q3)">❓ Question 3 & Options</button>
+  <button class="btn btn-stop" onclick="stopAudio()">⏹️ Stop</button>
+
+  <div class="status" id="statusText">Ready to read!</div>
+</div>
+
+<script>
+  // ---------------------------------------------------------------------
+  // COPY & PASTE YOUR SCRIPT CONTENT HERE
+  // ---------------------------------------------------------------------
+  const scriptData = {
+    passage: "I see a big pig. The pig likes to dig. The pig wears a wig.",
+    q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
+    q2: "Question 2: What do I see? Option A: a cat. Option B: a dog. Option C: a pig.",
+    q3: "Question 3: What does the pig like to do? Option A: jig. Option B: dig. Option C: eat."
+  };
+
+  const synth = window.speechSynthesis;
+  let selectedVoice = null;
+
+  // Load a clear British Female voice (Slow Pace for 5-Year-Olds)
+  function loadVoice() {
+    const voices = synth.getVoices();
+    selectedVoice = voices.find(v => v.lang.includes('en-GB') && v.name.includes('Female')) ||
+                    voices.find(v => v.lang.includes('en-GB')) ||
+                    voices[0];
+  }
+
+  if (speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = loadVoice;
+  }
+
+  function updateStatus(text) {
+    document.getElementById('statusText').innerText = text;
+  }
+
+  // General text reading function
+  function speakText(text, callback) {
+    synth.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    if (selectedVoice) utterance.voice = selectedVoice;
+    
+    // Voice Settings (Adjusted for 5-year-old learning pace)
+    utterance.rate = 0.75; // Slow pace
+    utterance.pitch = 1.2; // Friendly, clear tone
+
+    utterance.onstart = () => updateStatus("🔊 Reading...");
+    utterance.onend = () => {
+      updateStatus("Ready to read!");
+      if (callback) callback();
+    };
+
+    synth.speak(utterance);
+  }
+
+  // Play main passage 3 times with star rewards
+  function playMainPassage(count) {
+    let current = 1;
+    function next() {
+      if (current <= count) {
+        updateStatus(`📖 Reading Passage (${current}/${count})...`);
+        const text = `${scriptData.passage}. Great job! Let's color in star number ${current}!`;
+        current++;
+        speakText(text, () => setTimeout(next, 2000)); // 2-second pause for coloring
+      } else {
+        updateStatus("🎉 Star collection complete!");
+      }
+    }
+    next();
+  }
+
+  function stopAudio() {
+    synth.cancel();
+    updateStatus("Stopped.");
+  }
+</script>
+
+</body>
+</html>
