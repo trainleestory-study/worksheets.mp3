@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>5歲兒童英語閱讀發音助手</title>
+  <title>Phonics Reader Audio Companion</title>
   <style>
     body {
-      font-family: 'Comic Sans MS', 'Chalkboard SE', 'Microsoft JhengHei', sans-serif;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', Arial, sans-serif;
       background-color: #f0f8ff;
       text-align: center;
       padding: 20px;
@@ -19,7 +19,7 @@
       margin: 0 auto;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    h1 { color: #ff6b6b; font-size: 22px; margin-bottom: 10px; }
+    h1 { color: #ff6b6b; font-size: 22px; margin-bottom: 15px; }
     
     .select-group {
       text-align: left;
@@ -60,12 +60,10 @@
     }
     .btn:active { transform: scale(0.98); }
 
-    /* 主文章 3 次拆分按鈕 (綠色系/黃色系) */
     .btn-read1 { background-color: #4ecdc4; }
     .btn-read2 { background-color: #45b7aa; }
     .btn-read3 { background-color: #3b9c90; }
 
-    /* 問題按鈕 */
     .btn-q1 { background-color: #f7d794; color: #333; }
     .btn-q2 { background-color: #ff7675; }
     .btn-q3 { background-color: #74b9ff; }
@@ -73,37 +71,33 @@
     .btn-stop { background-color: #d63031; margin-top: 15px; }
     .status { margin-top: 15px; font-weight: bold; color: #555; font-size: 14px; }
   </style>
-  <!-- 載入你在 GitHub 上建立的 scripts.js 資料庫 -->
   <script src="scripts.js"></script>
 </head>
 <body>
 
 <div class="card">
-  <h1>🌟 英語閱讀發音練習 🌟</h1>
+  <h1>🌟 Phonics Reading Practice 🌟</h1>
   
-  <!-- 1. 頁碼選擇器 (001 / 002) -->
   <div class="select-group">
-    <label for="lessonSelect">📌 選擇工作紙頁碼：</label>
+    <label for="lessonSelect">📌 Select Page Number:</label>
     <select id="lessonSelect" onchange="loadSelectedLesson()">
-      <!-- 頁碼選項由 JavaScript 自動讀取 scripts.js 填入 -->
+      <!-- Populated dynamically -->
     </select>
   </div>
 
-  <!-- 2. 主短文拆分為 3 個獨立按鈕 -->
-  <div class="section-title">📖 主要文章朗讀（共 3 次）：</div>
-  <button class="btn btn-read1" onclick="playSinglePassage(1)">⭐ 第 1 次朗讀 + 塗第 1 顆星</button>
-  <button class="btn btn-read2" onclick="playSinglePassage(2)">⭐ 第 2 次朗讀 + 塗第 2 顆星</button>
-  <button class="btn btn-read3" onclick="playSinglePassage(3)">⭐ 第 3 次朗讀 + 塗第 3 顆星</button>
+  <div class="section-title">📖 Read Passage (3 Times):</div>
+  <button class="btn btn-read1" onclick="playSinglePassage(1)">⭐ Read 1st Time + Color Star 1</button>
+  <button class="btn btn-read2" onclick="playSinglePassage(2)">⭐ Read 2nd Time + Color Star 2</button>
+  <button class="btn btn-read3" onclick="playSinglePassage(3)">⭐ Read 3rd Time + Color Star 3</button>
 
-  <!-- 3. 問題朗讀按鈕 -->
-  <div class="section-title">❓ 理解測驗題目：</div>
-  <button class="btn btn-q1" onclick="speakText(currentLesson.q1)">1️⃣ 問題一 (Q1 題目)</button>
-  <button class="btn btn-q2" onclick="speakText(currentLesson.q2)">2️⃣ 問題二 (Q2 題目與選項)</button>
-  <button class="btn btn-q3" onclick="speakText(currentLesson.q3)">3️⃣ 問題三 (Q3 題目與選項)</button>
+  <div class="section-title">❓ Comprehension Questions:</div>
+  <button class="btn btn-q1" onclick="speakText(currentLesson.q1)">1️⃣ Question 1</button>
+  <button class="btn btn-q2" onclick="speakText(currentLesson.q2)">2️⃣ Question 2</button>
+  <button class="btn btn-q3" onclick="speakText(currentLesson.q3)">3️⃣ Question 3</button>
 
-  <button class="btn btn-stop" onclick="stopAudio()">⏹️ 停止播放</button>
+  <button class="btn btn-stop" onclick="stopAudio()">⏹️ Stop Audio</button>
 
-  <div class="status" id="statusText">準備就緒</div>
+  <div class="status" id="statusText">Ready</div>
 </div>
 
 <script>
@@ -111,37 +105,32 @@
   const synth = window.speechSynthesis;
   let selectedVoice = null;
 
-  // 動態填入 001, 002 等選項
   function populateSelect() {
     const select = document.getElementById('lessonSelect');
     select.innerHTML = '';
     
     if (typeof database === 'undefined' || Object.keys(database).length === 0) {
-      updateStatus("⚠️ 未找到 scripts.js 資料內容");
+      updateStatus("⚠️ Could not load scripts.js content");
       return;
     }
 
     for (let key in database) {
       let opt = document.createElement('option');
       opt.value = key;
-      opt.innerHTML = `頁碼 ${key} - ${database[key].passage.substring(0, 18)}...`;
+      opt.innerHTML = `Page ${key} - ${database[key].passage.substring(0, 20)}...`;
       select.appendChild(opt);
     }
     loadSelectedLesson();
   }
 
-  // 當使用者切換 001 或 002 時，即時更新當前腳本
   function loadSelectedLesson() {
     const key = document.getElementById('lessonSelect').value;
     currentLesson = database[key];
-    updateStatus(`已切換至第 ${key} 頁腳本`);
+    updateStatus(`Loaded Page ${key}`);
   }
 
-  // 選擇合適的女聲（聲音明亮清晰、不沉悶、適合幼兒）
   function loadVoice() {
     const voices = synth.getVoices();
-    
-    // 優先搜尋系統中清晰輕快的英音/美音女聲
     selectedVoice = voices.find(v => v.lang.includes('en-GB') && (v.name.includes('Google') || v.name.includes('Female') || v.name.includes('Victoria') || v.name.includes('Fiona'))) ||
                     voices.find(v => v.lang.includes('en-US') && (v.name.includes('Samantha') || v.name.includes('Zira') || v.name.includes('Female'))) ||
                     voices.find(v => v.lang.includes('en-GB')) ||
@@ -157,42 +146,37 @@
     document.getElementById('statusText').innerText = text;
   }
 
-  // 核心發音功能（語速設為 0.7x 慢速，音調設為 1.25 微高更親切）
   function speakText(text, callback) {
     synth.cancel();
     if (!text) {
-      updateStatus("⚠️ 該欄位沒有文字內容");
+      updateStatus("⚠️ No text available");
       return;
     }
     const utterance = new SpeechSynthesisUtterance(text);
     if (selectedVoice) utterance.voice = selectedVoice;
     
-    utterance.rate = 0.7;   // 0.7x 慢速朗讀，適合 5 歲兒童聽清發音
-    utterance.pitch = 1.25; // 稍微提高音調，保持聲音自然輕快
+    utterance.rate = 0.7;   // Slow pace for 5-year-olds
+    utterance.pitch = 1.25; // Cheerful, higher tone
 
-    utterance.onstart = () => updateStatus("🔊 正在朗讀中...");
+    utterance.onstart = () => updateStatus("🔊 Reading...");
     utterance.onend = () => {
-      updateStatus("朗讀完成！");
+      updateStatus("Done reading!");
       if (callback) callback();
     };
 
     synth.speak(utterance);
   }
 
-  // 單次朗讀短文 + 鼓勵星星提示
   function playSinglePassage(starNumber) {
     if (!currentLesson.passage) return;
-    
-    const starText = (starNumber === 1) ? "first" : (starNumber === 2) ? "second" : "third";
     const text = `${currentLesson.passage} ... Great job! Let's color in star number ${starNumber}!`;
-    
-    updateStatus(`📖 正在朗讀第 ${starNumber} 次短文...`);
+    updateStatus(`📖 Reading passage (${starNumber}/3)...`);
     speakText(text);
   }
 
   function stopAudio() {
     synth.cancel();
-    updateStatus("已停止播放。");
+    updateStatus("Audio stopped.");
   }
 
   window.onload = () => {
