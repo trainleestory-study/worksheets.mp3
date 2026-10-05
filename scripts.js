@@ -12,220 +12,220 @@ window.database = {
     q3: "Question 3: What color is the cat? Option A: yellow. Option B: orange. Option C: brown."
   },
   "003": {
-    passage: "Look at the hen. The hen is on the log. The hen has ten eggs.",
+    passage: "Mark has two candy corn. He has one cupcake. He likes to eat apple pie.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: Where is the hen? Option A: in the hut. Option B: on the log. Option C: in the nest.",
-    q3: "Question 3: How many eggs does the hen have? Option A: five. Option B: eight. Option C: ten."
+    q2: "Question 2: Who is the character? Option A: Mike. Option B: Mark. Option C: Ron.",
+    q3: "Question 3: How many cupcakes does he have? Option A: one. Option B: two. Option C: three."
   },
   "004": {
-    passage: "The pig is in the mud. The pig is pink. The pig is very happy.",
+    passage: "Hans will get his crayons. Then, he will get his pencil. Last, he will get his eraser.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: Where is the pig? Option A: in the box. Option B: in the mud. Option C: in the barn.",
-    q3: "Question 3: What color is the pig? Option A: pink. Option B: black. Option C: white."
+    q2: "Question 2: Who is the character? Option A: Ron. Option B: Hans. Option C: Max.",
+    q3: "Question 3: What will he get first? Option A: a pencil. Option B: an eraser. Option C: crayons."
   },
   "005": {
-    passage: "Tim has a red cup. The cup is on the rug. Tim spills his milk.",
+    passage: "Ben will take a bath. Then, he will brush his hair. Last, he will brush his teeth.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does Tim have? Option A: a red cup. Option B: a blue box. Option C: a big mug.",
-    q3: "Question 3: What does Tim spill? Option A: water. Option B: milk. Option C: juice."
+    q2: "Question 2: Who is the character? Option A: Leo. Option B: Ben. Option C: Ron.",
+    q3: "Question 3: What will he do last? Option A: take a bath. Option B: brush his hair. Option C: brush his teeth."
   },
   "006": {
-    passage: "The sun is up. The sun is hot and bright. The bug is on the flower.",
+    passage: "Jamie will eat her sandwich for lunch. Then, she will drink her juice. Last, she will eat her apple.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: How is the sun? Option A: cold. Option B: hot and bright. Option C: wet.",
-    q3: "Question 3: Where is the bug? Option A: on the leaf. Option B: on the rock. Option C: on the flower."
+    q2: "Question 2: Who is the character? Option A: Jamie. Option B: James. Option C: Jones.",
+    q3: "Question 3: What will she eat last? Option A: apple. Option B: juice. Option C: sandwich."
   },
   "007": {
-    passage: "Ben has a net. Ben catches a big fish. Ben puts the fish in a bucket.",
+    passage: "Ben is walking to school. Greg is riding his scooter to school. James is riding his bike to school.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does Ben have? Option A: a net. Option B: a rod. Option C: a box.",
-    q3: "Question 3: Where does Ben put the fish? Option A: in the lake. Option B: in a bucket. Option C: in a dish."
+    q2: "Question 2: Who is walking to school? Option A: Greg. Option B: James. Option C: Ben.",
+    q3: "Question 3: What does James ride to school? Option A: bike. Option B: scooter. Option C: school bus."
   },
   "008": {
-    passage: "Pam has a red cap. Pam goes to the park. Pam sits on a bench.",
+    passage: "Ken saw three birds at the park. Then, he saw two ants at the park. Last, he saw a cat at the park.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What color is Pam's cap? Option A: red. Option B: blue. Option C: green.",
-    q3: "Question 3: Where does Pam sit? Option A: on the grass. Option B: on a bench. Option C: on a chair."
+    q2: "Question 2: Where is Ken? Option A: at the store. Option B: at the library. Option C: at the park.",
+    q3: "Question 3: How many birds did he see? Option A: one. Option B: two. Option C: three."
   },
   "009": {
-    passage: "The frog is green. The frog jumps on a leaf. The frog eats a bug.",
+    passage: "Larry will get the soap. Then, he will get the towel. Last, he will put his dog in the tub.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What color is the frog? Option A: brown. Option B: green. Option C: yellow.",
-    q3: "Question 3: What does the frog eat? Option A: a bug. Option B: a worm. Option C: a fly."
+    q2: "Question 2: What is Larry going to do? Option A: walk his dog. Option B: wash his dog. Option C: play with his dog.",
+    q3: "Question 3: Where will Larry put his dog? Option A: in the tub. Option B: in the pond. Option C: in the boat."
   },
   "010": {
-    passage: "Sam has a red kite. The kite flies high in the sky. The wind blows hard.",
+    passage: "Hannah saw an apple tree. She will pick six apples. She will put the apples in the basket.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does Sam have? Option A: a red kite. Option B: a red balloon. Option C: a red plane.",
-    q3: "Question 3: How does the wind blow? Option A: soft. Option B: hard. Option C: slow."
+    q2: "Question 2: What did Hannah see? Option A: an apple tree. Option B: a flower. Option C: an orange tree.",
+    q3: "Question 3: How many apples will she pick? Option A: three apples. Option B: four apples. Option C: six apples."
   },
   "011": {
-    passage: "The duck is yellow. The duck swims in the pond. The duck quacks loudly.",
+    passage: "Lucy will play with the leaves. Then, she will rake the leaves. Last, she will put the leaves in the bag.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What color is the duck? Option A: white. Option B: yellow. Option C: brown.",
-    q3: "Question 3: Where does the duck swim? Option A: in the river. Option B: in the pond. Option C: in the pool."
+    q2: "Question 2: Who is the character? Option A: Lisa. Option B: Lena. Option C: Lucy.",
+    q3: "Question 3: Where will she put the leaves? Option A: in the box. Option B: in the bag. Option C: in the trash can."
   },
   "012": {
-    passage: "Kim has a small doll. The doll has a blue dress. Kim sleeps with her doll.",
+    passage: "I see a dog in the dog house. The dog likes to dig. The dog is wet.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What color is the doll's dress? Option A: blue. Option B: pink. Option C: red.",
-    q3: "Question 3: What does Kim do with her doll? Option A: plays outside. Option B: sleeps with it. Option C: washes it."
+    q2: "Question 2: What do I see? Option A: a rabbit. Option B: a bat. Option C: a dog.",
+    q3: "Question 3: What does the dog like to do? Option A: run. Option B: dig. Option C: hide."
   },
   "013": {
-    passage: "Tom gets a gift. Tom opens the box. Tom finds a toy train.",
+    passage: "I see a jar of cookies. The monster breaks the jar. The monster eats a cookie.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does Tom get? Option A: a gift. Option B: a letter. Option C: a book.",
-    q3: "Question 3: What is inside the box? Option A: a toy car. Option B: a toy train. Option C: a robot."
+    q2: "Question 2: What do I see? Option A: a jar of candy. Option B: a jar of chocolate. Option C: a jar of cookies.",
+    q3: "Question 3: What does the monster eat? Option A: a cookie. Option B: a cupcake. Option C: a candy."
   },
   "014": {
-    passage: "The bee flies to the flower. The bee gets sweet nectar. The bee flies back to the hive.",
+    passage: "Do you see the frog? The frog is on the log. The frog is in the bucket.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: Where does the bee fly first? Option A: to the tree. Option B: to the flower. Option C: to the garden.",
-    q3: "Question 3: Where does the bee fly back? Option A: to the hive. Option B: to the nest. Option C: to the house."
+    q2: "Question 2: What do you see? Option A: a dog. Option B: a frog. Option C: a bug.",
+    q3: "Question 3: Where is the frog? Option A: on the box. Option B: on the rock. Option C: on the log."
   },
   "015": {
-    passage: "Leo likes to bake. Leo makes chocolate cookies. Leo eats three cookies.",
+    passage: "Do you see the man? The man has a pan. He will put the pan in his van.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does Leo bake? Option A: cake. Option B: chocolate cookies. Option C: bread.",
-    q3: "Question 3: How many cookies does Leo eat? Option A: two. Option B: three. Option C: four."
+    q2: "Question 2: What does the man have? Option A: a pan. Option B: a hen. Option C: a pen.",
+    q3: "Question 3: Where will he put the pan? Option A: in the car. Option B: in the van. Option C: in the train."
   },
   "016": {
-    passage: "The rabbit hops fast. The rabbit sees a orange carrot. The rabbit eats the carrot.",
+    passage: "Linda saw a lion at the zoo. Then, she saw a hippo. Last, she saw a seal.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What color is the carrot? Option A: red. Option B: orange. Option C: yellow.",
-    q3: "Question 3: What does the rabbit do first? Option A: eats. Option B: hops fast. Option C: sleeps."
+    q2: "Question 2: Where is Linda? Option A: at the park. Option B: at the zoo. Option C: at the shop.",
+    q3: "Question 3: What did she see last? Option A: a lion. Option B: a hippo. Option C: a seal."
   },
   "017": {
-    passage: "Mia has a yellow pencil. Mia draws a sunny picture. Mia writes her name.",
+    passage: "I like to paint. I will paint a yellow star. I will paint a pink flower.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What color is Mia's pencil? Option A: yellow. Option B: green. Option C: blue.",
-    q3: "Question 3: What does Mia draw? Option A: a house. Option B: a sunny picture. Option C: a tree."
+    q2: "Question 2: What do I like to do? Option A: play. Option B: draw. Option C: paint.",
+    q3: "Question 3: What color is the flower? Option A: red. Option B: pink. Option C: yellow."
   },
   "018": {
-    passage: "It is a rainy day. Noah puts on his raincoat. Noah jumps in a puddle.",
+    passage: "Maya has a fish. She has a fishbowl. Maya put the fish in the fishbowl.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What kind of day is it? Option A: sunny. Option B: rainy. Option C: windy.",
-    q3: "Question 3: What does Noah jump in? Option A: a puddle. Option B: the mud. Option C: the grass."
+    q2: "Question 2: What does Maya have? Option A: a bug. Option B: a fish. Option C: a frog.",
+    q3: "Question 3: Where does she put the fish? Option A: in the fishbowl. Option B: in the bag. Option C: in the box."
   },
   "019": {
-    passage: "The owl sits on a branch. The owl opens its big eyes. The owl hoots at night.",
+    passage: "Leo saw a flower. There is a ladybug on the flower. Leo put the ladybug in the jar.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: Where is the owl sitting? Option A: on a roof. Option B: on a branch. Option C: on a fence.",
-    q3: "Question 3: When does the owl hoot? Option A: in the morning. Option B: at night. Option C: at noon."
+    q2: "Question 2: Who is the character? Option A: Leon. Option B: Leo. Option C: Lou.",
+    q3: "Question 3: Where did he put the ladybug? Option A: in the box. Option B: in the bowl. Option C: in the jar."
   },
   "020": {
-    passage: "Lily plants a small seed. She waters it every day. A green plant grows.",
+    passage: "Matt is eating breakfast. Lisa is in math class. Lucy is in art class.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does Lily plant? Option A: a small seed. Option B: a flower. Option C: a tree.",
-    q3: "Question 3: What grows after watering? Option A: a fruit. Option B: a green plant. Option C: a flower."
+    q2: "Question 2: Who is in math class? Option A: Matt. Option B: Lisa. Option C: Lucy.",
+    q3: "Question 3: Where is Lucy? Option A: in math class. Option B: in art class. Option C: in music class."
   },
   "021": {
-    passage: "Jack gets a new red bicycle. Jack puts on his helmet. Jack rides down the street.",
+    passage: "Sandy has a yellow ruler. Max has a blue pencil. Maggie has a pink crayon.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What color is the bicycle? Option A: blue. Option B: red. Option C: black.",
-    q3: "Question 3: What does Jack put on before riding? Option A: his shoes. Option B: his helmet. Option C: his jacket."
+    q2: "Question 2: Who has a pink crayon? Option A: Sandy. Option B: Max. Option C: Maggie.",
+    q3: "Question 3: What color is Max's pencil? Option A: blue. Option B: pink. Option C: yellow."
   },
   "022": {
-    passage: "The cat sees a brown mouse. The cat chases the mouse. The mouse hides in a hole.",
+    passage: "Jen has a blue table. Her chair is red. Jen has a big bookshelf.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What color is the mouse? Option A: brown. Option B: gray. Option C: white.",
-    q3: "Question 3: Where does the mouse hide? Option A: under the bed. Option B: in a hole. Option C: behind a box."
+    q2: "Question 2: Who is the character? Option A: Jen. Option B: Ken. Option C: Ben.",
+    q3: "Question 3: What does she have? Option A: a blue table. Option B: a blue chair. Option C: a red table."
   },
   "023": {
-    passage: "Anna gets up early. Anna eats sweet pancakes for breakfast. Anna goes to school.",
+    passage: "Sam will water the plants. Gary will wipe the table. John will mop the floor.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does Anna eat for breakfast? Option A: eggs. Option B: sweet pancakes. Option C: cereal.",
-    q3: "Question 3: Where does Anna go after breakfast? Option A: to the park. Option B: to school. Option C: to the store."
+    q2: "Question 2: Who will water the plants? Option A: Sam. Option B: Gary. Option C: John.",
+    q3: "Question 3: What will John do? Option A: water the plants. Option B: wipe the table. Option C: mop the floor."
   },
   "024": {
-    passage: "The monkey climbs a tall tree. The monkey picks a yellow banana. The monkey eats the banana happily.",
+    passage: "My cat is fat. My cat has a friend rat. My fat cat and the rat sat on the mat.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does the monkey climb? Option A: a tall tree. Option B: a mountain. Option C: a fence.",
-    q3: "Question 3: What fruit does the monkey pick? Option A: an apple. Option B: a yellow banana. Option C: an orange."
+    q2: "Question 2: What do I have? Option A: a pet rat. Option B: a pet cat. Option C: a pet bat.",
+    q3: "Question 3: Where did they sit? Option A: on the mat. Option B: on the rug. Option C: on the floor."
   },
   "025": {
-    passage: "Ben builds a sandcastle on the beach. A big wave comes. The sandcastle washes away.",
+    passage: "My friends will come to my house. We will play chess. Then, we will play cards.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: Where does Ben build a sandcastle? Option A: in the garden. Option B: on the beach. Option C: in the playground.",
-    q3: "Question 3: What washes the sandcastle away? Option A: the wind. Option B: a big wave. Option C: rain."
+    q2: "Question 2: Who will come to my house? Option A: my teacher. Option B: my friends. Option C: my grandparents.",
+    q3: "Question 3: What will we play? Option A: checkers and card. Option B: cards and blocks. Option C: chess and cards."
   },
   "026": {
-    passage: "The bird builds a nest in the tree. The bird lays three small eggs. The baby birds hatch.",
+    passage: "I like to collect stamps. I have a penguin stamp. I have a polar bear stamp. I have a snowman stamp.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: Where is the nest? Option A: on the roof. Option B: in the tree. Option C: on the ground.",
-    q3: "Question 3: How many eggs are in the nest? Option A: two. Option B: three small eggs. Option C: four."
+    q2: "Question 2: What do I like to collect? Option A: stickers. Option B: cards. Option C: stamps.",
+    q3: "Question 3: What do I have? Option A: a penguin stamp. Option B: a snowman sticker. Option C: a snowflake stamp."
   },
   "027": {
-    passage: "Emma goes to the zoo. Emma sees a big elephant. The elephant splashes water.",
+    passage: "Luna loves her pets. She has a dog. She has a cat. She has a rabbit.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: Where does Emma go? Option A: to the zoo. Option B: to the farm. Option C: to the park.",
-    q3: "Question 3: What animal does Emma see? Option A: a lion. Option B: a big elephant. Option C: a giraffe."
+    q2: "Question 2: Who is the character? Option A: Lana. Option B: Luna. Option C: Lily.",
+    q3: "Question 3: What does she have? Option A: a dog, a cat, a bird. Option B: a dog, a cat, a rabbit. Option C: a dog, a bat, a rabbit."
   },
   "028": {
-    passage: "The snow falls outside. Oliver builds a cool snowman. Oliver puts a carrot nose on it.",
+    passage: "I like winter! I like my coat. This is my sweater. I have pink boots.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What falls outside? Option A: rain. Option B: snow. Option C: leaves.",
-    q3: "Question 3: What does Oliver use for the nose? Option A: a button. Option B: a carrot. Option C: a stick."
+    q2: "Question 2: What do I like? Option A: winter. Option B: fall. Option C: summer.",
+    q3: "Question 3: What do I have? Option A: blue boots. Option B: red boots. Option C: pink boots."
   },
   "029": {
-    passage: "The caterpillar eats green leaves. It turns into a chrysalis. A beautiful butterfly comes out.",
+    passage: "I made a snowman. It is in my backyard. The snowman is melting.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does the caterpillar eat? Option A: flowers. Option B: green leaves. Option C: grass.",
-    q3: "Question 3: What comes out at the end? Option A: a butterfly. Option B: a moth. Option C: a bee."
+    q2: "Question 2: What did I make? Option A: a snow bear. Option B: a snowman. Option C: a snow fort.",
+    q3: "Question 3: Where is it? Option A: in the front yard. Option B: in the backyard. Option C: in the bedroom."
   },
   "030": {
-    passage: "Max loses his favorite ball. Max looks under the bed. Max finds his ball and smiles.",
+    passage: "First, Hannah will play bowling. Then, she will play golf. Last, she will play tennis.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What did Max lose? Option A: his shoe. Option B: his favorite ball. Option C: his hat.",
-    q3: "Question 3: Where did Max find it? Option A: in the yard. Option B: under the bed. Option C: in the closet."
+    q2: "Question 2: Who is the character? Option A: Tony. Option B: Honey. Option C: Hannah.",
+    q3: "Question 3: What will she do last? Option A: play tennis. Option B: play golf. Option C: play bowling."
   },
   "031": {
-    passage: "Sophie gets a colorful storybook. She reads the fun book. She shares it with her friend.",
+    passage: "A baby peacock is called a peachick. Peacocks like to eat flowers. Peacocks do not like snakes.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does Sophie get? Option A: a notebook. Option B: a colorful storybook. Option C: a toy.",
-    q3: "Question 3: Who does she share it with? Option A: her brother. Option B: her friend. Option C: her teacher."
+    q2: "Question 2: What are baby peacocks called? Option A: cub. Option B: kittens. Option C: peachicks.",
+    q3: "Question 3: What do peacocks like to eat? Option A: flowers. Option B: bread. Option C: snake."
   },
   "032": {
-    passage: "The farmer drives his green tractor. He feeds the cows in the barn. He collects fresh eggs.",
+    passage: "I see an owl. The owl lays six eggs. Look! The egg hatches.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What color is the tractor? Option A: red. Option B: green. Option C: blue.",
-    q3: "Question 3: What does the farmer collect? Option A: fresh eggs. Option B: apples. Option C: milk."
+    q2: "Question 2: What do I see? Option A: an ostrich. Option B: an owl. Option C: a peacock.",
+    q3: "Question 3: How many eggs does the owl have? Option A: four eggs. Option B: five eggs. Option C: six eggs."
   },
   "033": {
-    passage: "The spider weaves a shiny web. A small fly gets caught. The spider eats the fly.",
+    passage: "The beaver has a little log. The otter likes to eat fish. The frog is on the lily pad.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does the spider weave? Option A: a net. Option B: a shiny web. Option C: a nest.",
-    q3: "Question 3: What gets caught in the web? Option A: a small fly. Option B: a bee. Option C: an ant."
+    q2: "Question 2: What does the beaver have? Option A: a big log. Option B: a little log. Option C: a fish.",
+    q3: "Question 3: Where is the frog? Option A: on the log. Option B: in the water. Option C: on the lily pad."
   },
   "034": {
-    passage: "Lucas buys a red balloon. The wind blows the balloon away. Lucas feels sad.",
+    passage: "Kimmy likes to jog. She drinks a lot of water. Kimmy rides her bike to school every day.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What color is the balloon? Option A: red. Option B: yellow. Option C: blue.",
-    q3: "Question 3: How does Lucas feel at the end? Option A: happy. Option B: sad. Option C: angry."
+    q2: "Question 2: Who is the character? Option A: Kim. Option B: Kimmy. Option C: Holly.",
+    q3: "Question 3: What does she like to do? Option A: sing. Option B: dance. Option C: jog."
   },
   "035": {
-    passage: "The dog buries a big bone. Later, the dog digs up the bone. The dog chews on it.",
+    passage: "Tommy is going to eat his lunch. After lunch, he will go to music class. Last, He will go to the gym.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does the dog bury? Option A: a toy. Option B: a big bone. Option C: a stick.",
-    q3: "Question 3: What does the dog do at the end? Option A: runs. Option B: sleeps. Option C: chews on it."
+    q2: "Question 2: What is Tommy going to do first? Option A: go to art class. Option B: eat his lunch. Option C: go to the gym.",
+    q3: "Question 3: Where will he go after lunch? Option A: music class. Option B: art class. Option C: gym."
   },
   "036": {
-    passage: "Maya puts on her ice skates. She glides smoothly on the ice. She does a cool spin.",
+    passage: "Angela made a lantern for the festival. Then, she watched the dragon show. Last, she watched the fireworks.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does Maya put on? Option A: her ice skates. Option B: her boots. Option C: her shoes.",
-    q3: "Question 3: What trick does Maya do? Option A: a jump. Option B: a cool spin. Option C: a flip."
+    q2: "Question 2: What did Angela make? Option A: a dragon. Option B: a lantern. Option C: a kite.",
+    q3: "Question 3: What did she watch? Option A: the parade. Option B: the dragon show. Option C: the movies."
   },
   "037": {
-    passage: "The sun sets in the west. The stars begin to shine. The night becomes quiet.",
+    passage: "Mary has a little lamb. The lamb followed Mary to school. Then, Mary and her lamb went home.",
     q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: Where does the sun set? Option A: in the east. Option B: in the west. Option C: in the south.",
-    q3: "Question 3: What begins to shine? Option A: the moon. Option B: the stars. Option C: the lights."
+    q2: "Question 2: What does Mary have? Option A: a little deer. Option B: a little lamb. Option C: a little goat.",
+    q3: "Question 3: Where did the lamb follow Mary? Option A: to school. Option B: to the library. Option C: to the park."
   },
   "038": {
-    passage: "Ethan finds a shiny shell on the beach. He listens to the sound of the ocean. He puts the shell in his pocket.",
-    q1: "Question 1: Put the events in order. Write 1, 2, or 3 in the box.",
-    q2: "Question 2: What does Ethan find? Option A: a shiny shell. Option B: a rock. Option C: a coin.",
-    q3: "Question 3: Where does Ethan put the shell? Option A: in his bag. Option B: in his pocket. Option C: in the water."
+    passage: "My dad likes to eat turkey. My mom likes to eat mashed potatoes. I like to eat pumpkin pie.",
+    q1: "Question 1: Check the picture that matches the story.",
+    q2: "Question 2: What does my mom like to eat? Option A: turkey. Option B: mashed potatoes. Option C: pumpkin pie.",
+    q3: "Question 3: What do I like to eat? Option A: turkey. Option B: mashed potatoes. Option C: pumpkin pie."
   },
   "039": {
     passage: "Mr. Pig is muddy. Mr. Pig takes a bath. Mr. Pig wears a blue shirt.",
